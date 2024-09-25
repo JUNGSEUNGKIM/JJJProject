@@ -1,0 +1,3 @@
+rootProject.name = 'JJJProject'
+include 'backend'
+// frontend는 제외
