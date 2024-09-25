@@ -1,0 +1,5 @@
+spring :
+  kakao:
+    client_id: bd4570a74ca1976319a97cb6552e20b3
+    redirect_uri: http://localhost:3000/callback/kakao
+    scope: profile_nickname, profile_image
