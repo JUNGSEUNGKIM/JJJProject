@@ -1,9 +1,12 @@
 
 import './App.css';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import Test from "./components/test";
 import Login from "./view/user/login";
+import LoginKakao from "./view/kakao/LoginKakao";
+import {Route, Routes} from "react-router-dom";
+import LoginHandler from "./JHkakao/Page/LoginHandler";
 
 function App() {
   const [message, setMessage] = useState('');
@@ -20,8 +23,16 @@ function App() {
   return (
       <div className="App">
 
-          <Test/>
-          <Login/>
+          <LoginKakao/>
+
+          {/*<Test/>*/}
+          {/*<Login/>*/}
+          <Routes>
+              <Route
+                  path="/login/oauth2/callback/kakao" // 리디렉트 URL
+                  element={<LoginHandler />} // 리디렉트 후 표시될 컴포넌트
+              />
+          </Routes>
       </div>
   );
 }
