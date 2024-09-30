@@ -20,19 +20,31 @@ function App() {
           console.error('There was an error fetching the data!', error);
         });
   }, []);
+
+  useEffect( () => {
+      axios.get(`${process.env.REACT_APP_URL}/board/boardmain`)
+          .then(response => {
+              setMessage(response.data)
+              console.log(response.data)
+          })
+          .catch(error => {
+              console.log('error',error);
+          });
+  },[])
+
   return (
       <div className="App">
 
-          <LoginKakao/>
+          {/*<LoginKakao/>*/}
 
-          {/*<Test/>*/}
-          {/*<Login/>*/}
-          <Routes>
-              <Route
-                  path="/login/oauth2/callback/kakao" // 리디렉트 URL
-                  element={<LoginHandler />} // 리디렉트 후 표시될 컴포넌트
-              />
-          </Routes>
+          <Test/>
+          <Login/>
+          {/*<Routes>*/}
+          {/*    <Route*/}
+          {/*        path="/login/oauth2/callback/kakao" // 리디렉트 URL*/}
+          {/*        element={<LoginHandler />} // 리디렉트 후 표시될 컴포넌트*/}
+          {/*    />*/}
+          {/*</Routes>*/}
       </div>
   );
 }

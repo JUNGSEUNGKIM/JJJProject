@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 
-@SpringBootApplication(scanBasePackages = "com.example.finalproject.controller")
+@SpringBootApplication(scanBasePackages = "com.example.finalproject")
 @MapperScan("com.example.finalproject.repository.mybatis")
 public class FinalProjectApplication {
 
