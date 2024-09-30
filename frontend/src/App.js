@@ -7,6 +7,7 @@ import Login from "./view/user/login";
 import LoginKakao from "./view/kakao/LoginKakao";
 import {Route, Routes} from "react-router-dom";
 import LoginHandler from "./JHkakao/Page/LoginHandler";
+import LoginComplete from "./JHkakao/Page/LoginComplete";
 
 function App() {
   const [message, setMessage] = useState('');
